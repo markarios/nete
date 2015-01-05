@@ -6,9 +6,15 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<script src="custom.js"></script>
+<script src="randomforcedata.js"></script>
+<script src="nete.js"></script>
+
 </head>
 
   <body>
@@ -40,6 +46,7 @@
     <div class="container">
       <div class="page-header">
       </div>
+      <figure id="vis"></figure>
       <p>&nbsp</p>
       <p>January 5, 2015</p>
       <p>&nbsp</p>
@@ -85,11 +92,16 @@
       </div>
     </footer>
 
+    <script>
+      function forceFcn(chart){return d3.custom.forceChart().chartClass(chart).width(100).height(100).radius(3).svgBackgroundColor("#FFF")};
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      d3.select("figure#vis")
+        .datum(randomForceData(10))
+        .call(forceFcn("5nodes"));
+
+    </script>
+
+
 
 
   </body>
