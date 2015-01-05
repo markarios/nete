@@ -46,7 +46,6 @@
     <div class="container">
       <div class="page-header">
       </div>
-      <figure id="vis"></figure>
       <p>&nbsp</p>
       <p>January 5, 2015</p>
       <p>&nbsp</p>
@@ -74,7 +73,9 @@
        <li>Request additional analysis on the declines in item (3), above.</li>
        <li>Consider requesting further analysis on transaction types: Supplement and Carryover.</li>
        <li>Request further investigation on highlighted items (4) and (5)</li>
+       <li>Consider requesting a graph study of the dataset as demonstrated in this visualization. This may give you deeper insights into interrelationships that may not be obvious through the status quo.</li>
       </ol>
+      <figure id="vis"></figure>
       <p>&nbsp</p>
       <p class="lead">Backup</p>
       <ol>
@@ -93,10 +94,11 @@
     </footer>
 
     <script>
-      function forceFcn(chart){return d3.custom.forceChart().chartClass(chart).width(100).height(100).radius(3).svgBackgroundColor("#FFF")};
+      function forceFcn(chart){return d3.custom.forceChart().chartClass(chart).width(150).height(150)
+        .radius(3).svgBackgroundColor("#FFF")};
 
       d3.select("figure#vis")
-        .datum(randomForceData(10))
+        .datum(randomForceData(15))
         .call(forceFcn("5nodes"));
 
     </script>
